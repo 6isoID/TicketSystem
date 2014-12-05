@@ -4,16 +4,19 @@ class Seat {
 
     static enum State {
         FREE,
+        BLOCKED,
         RESERVED,
         SOLD
     }
 
+    //THAT is wierd
+    int rowNum
+    int columnNum
+    //TODO move to mongoDB
+
     State state
 
-    public static Seat buildSeat(String _state) {
-         new Seat(state: State.valueOf(_state))
-    }
-
+    static belongsTo = [ hall: Hall ]
     static constraints = {
     }
 }

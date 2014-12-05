@@ -7,8 +7,9 @@ import grails.rest.Resource
 class Cinema {
 
     String name
-    List<Session> sessions
+//    List<Session> sessions
 
+    static hasMany = Session
     static constraints = {
     }
 }
