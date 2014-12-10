@@ -1,24 +1,27 @@
 package ticketsystem
 
+import groovy.transform.Canonical
+
+
 class Hall {
 
-    //List<List<Seat>> seats
+    static hasMany = [seats: Seat]
+    static constraints = {
+    }
 
 
-    static List<Seat> createEmptyHall(int rows, int columns) {
-        List<Seat> seats = []
-        for(r in 1..rows) //  !!!
-            for(c in 1..columns)
-                seats.add(new Seat(
+    Hall(int rows, int columns) {
+        def seatlist = []
+        for (r in 1..rows) //  !!!
+            for (c in 1..columns)
+                seatlist.add(new Seat(
                         state: Seat.State.FREE,
                         rowNum: r,
                         columnNum: c
                 ))
-        return seats
+        seats.addAll(seatlist)
     }
 
-    static belongsTo = Session
-    static hasMany = [ seats:  Seat ]
-    static constraints = {
-    }
+    //TODO alternative mapping for seats - for example, storing the set in one field as a JSON, and unpacking here as a collection
+
 }

@@ -9,6 +9,7 @@ class Seat {
         SOLD
     }
 
+//    Hall hall
     //THAT is wierd
     int rowNum
     int columnNum
@@ -16,7 +17,8 @@ class Seat {
 
     State state
 
-    static belongsTo = [ hall: Hall ]
+//    static hasOne = [rowNum: int, columnNum: int, state: State]
+    static belongsTo = [hall: Hall]
     static constraints = {
     }
 }

@@ -1,4 +1,4 @@
-import org.joda.time.DateTime
+//import org.joda.time.DateTime
 import ticketsystem.Cinema
 import ticketsystem.Hall
 import ticketsystem.Seat
@@ -8,19 +8,20 @@ class BootStrap {
 
 
 
-    //
-   // @Newify([Cinema, Session, DateTime, Hall])
     def init = { servletContext ->
+        Hall smallHall = new Hall(rows:3, columns: 8)
+        Cinema trashCinema = new Cinema(name: "Зеленый слоник", duration: 86)
 
-        Cinema cinema = new Cinema(
-                name: "Зеленый слоник",
-                sessions: [ new Session(
-                    time: new DateTime(),
-                    cost: BigDecimal.ONE,
-                    hall: new Hall(seats: Hall.createEmptyHall(3,8))
-                )])
-        cinema.save()
+        trashCinema.save()
+        smallHall.save()
 
+        Session cinemaSession = new Session(
+                time: new GregorianCalendar(),
+                cost: BigDecimal.ONE,
+                hall: smallHall,
+                cinema: trashCinema
+        )
+        cinemaSession.save()
     }
 
     def destroy = {
