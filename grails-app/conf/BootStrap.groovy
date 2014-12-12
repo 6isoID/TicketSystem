@@ -9,19 +9,24 @@ class BootStrap {
 
 
     def init = { servletContext ->
-        Hall smallHall = new Hall(rows:3, columns: 8)
-        Cinema trashCinema = new Cinema(name: "Зеленый слоник", duration: 86)
+        Hall smallHall = new Hall(3, 8)
+        Cinema trashCinema = [name: "Зеленый слоник", duration: 86]
 
         trashCinema.save()
         smallHall.save()
 
-        Session cinemaSession = new Session(
+        Session cinemaSession = [
                 time: new GregorianCalendar(),
                 cost: BigDecimal.ONE,
                 hall: smallHall,
                 cinema: trashCinema
-        )
-        cinemaSession.save()
+        ]
+        cinemaSession.save(flush: true)
+
+        println Hall.list()[0].seats
+
+        println Cinema.list()[0]
+        println Session.list()[0]
     }
 
     def destroy = {
