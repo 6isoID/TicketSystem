@@ -116,3 +116,4 @@ log4j.main = {
            'net.sf.ehcache.hibernate'
 }
 
+grails.sitemesh.default.layout = 'angularImport'

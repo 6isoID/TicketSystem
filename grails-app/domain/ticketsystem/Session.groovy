@@ -1,8 +1,10 @@
 package ticketsystem
 
+import grails.rest.Resource
 import groovy.transform.ToString
 
 @ToString
+@Resource(uri = '/session', formats = ['json', 'xml'])
 class Session {
 
     Calendar time

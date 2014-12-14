@@ -15,8 +15,11 @@ class BootStrap {
         trashCinema.save()
         smallHall.save()
 
+        Calendar nearFuture = new GregorianCalendar()
+        nearFuture.add(Calendar.DAY_OF_WEEK,1)
+
         Session cinemaSession = [
-                time: new GregorianCalendar(),
+                time: nearFuture,
                 cost: BigDecimal.ONE,
                 hall: smallHall,
                 cinema: trashCinema
