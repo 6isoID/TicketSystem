@@ -5,19 +5,12 @@ import groovy.transform.ToString
 @ToString
 class Seat {
 
-    static enum State {
-        FREE,
-        BLOCKED,
-        RESERVED,
-        SOLD
-    }
-
     //THAT _is_ (!)wierd
     int rowNum
     int columnNum
     //TODO move to mongoDB
+    //TODO create custom mapping - serialize it as a string
 
-    State state
 
     static belongsTo = [hall: Hall]
     static constraints = {

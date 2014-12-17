@@ -7,6 +7,7 @@
 <body ng-app="attributeApp">
 
 <p>Nothing here {{'yet' + '!'}}</p>
+<p> {{5*7}}</p>
 
 <script>
     var model = ${model}
