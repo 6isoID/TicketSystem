@@ -63,6 +63,8 @@ grails.project.dependency.resolution = {
         compile ':cache:1.1.8'
         compile ":asset-pipeline:1.9.9"
         compile ":angularjs:1.0.0"
+        compile ":atmosphere-meteor:1.0.4"
+//        compile ":events-push:1.0.M7" // not available =(
 //        compile ":joda-time:1.5"
 //        compile ":mysql-connectorj:5.1.22.1"
         // plugins needed at runtime but not for compilation
@@ -70,7 +72,7 @@ grails.project.dependency.resolution = {
         runtime ":hibernate:3.6.10.18"
         runtime ":database-migration:1.4.0"
         runtime ":jquery:1.11.1"
-
+        runtime ":resources:1.2.13"
         // Uncomment these to enable additional asset-pipeline capabilities
         //compile ":sass-asset-pipeline:1.9.0"
         //compile ":less-asset-pipeline:1.10.0"

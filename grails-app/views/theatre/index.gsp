@@ -2,39 +2,36 @@
 <html>
 <head>
     <title></title>
+
+    <g:javascript src="services/CommonServices.js"/>
+    <g:javascript src="controllers/CommonControllers.js"/>
+
+    <g:javascript src="app.js"/>
+
+
 </head>
 
-<body ng-app="attributeApp">
+<body >
+<div ng-controller="SessionController">
+   <ul>
+       <li ng-repeat="session in sessions">
 
-<p>Nothing here {{'yet' + '!'}}</p>
-<p> {{5*7}}</p>
+           %{--TODO custom REST controller - I don't need class info and so on. I need only name and ID--}%
+           Session id: {{session.id}} <br/>
+           Cinema id:  {{session.cinema.id}}<br/>
+           Hall id: {{session.hall.id}}<br/>
+           Cost: {{session.cost}}<br/>
+           Time: {{session.time}}
+       </li>
 
-<script>
-    var model = ${model}
+   </ul>
 
-    console.log(model);
-</script>
+
+</div>
+
 
 </body>
 </html>
 
 
 
-
-
-
-%{--<!doctype html>--}%
-%{--<html lang="en" ng-app>--}%
-%{--<head>--}%
-    %{--<meta charset="utf-8">--}%
-    %{--<title>My HTML File</title>--}%
-    %{--<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">--}%
-    %{--<link rel="stylesheet" href="css/app.css">--}%
-    %{--<script src="bower_components/angular/angular.js"></script>--}%
-%{--</head>--}%
-%{--<body>--}%
-
-%{--<p>Nothing here {{'yet' + '!'}}</p>--}%
-
-%{--</body>--}%
-%{--</html>--}%

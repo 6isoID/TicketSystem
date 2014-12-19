@@ -1,14 +1,15 @@
 
 <%@ page contentType="text/html;charset=UTF-8" %>
-<html>
+<html ng-app="theatreApp">
 <head>
     <title><g:layoutTitle default="Theatre"/></title>
     <asset:javascript src="grails-angularjs.js"/>
     <asset:stylesheet src="grails-angularjs.css"/>
+
     <g:layoutHead/>
 </head>
 
-<body ng-app="">
+%{--<body>--}%
 <g:layoutBody/>
-</body>
+%{--</body>--}%
 </html>

@@ -16,7 +16,7 @@ class Hall {
         for (r in 1..rows) //  !!!
             for (c in 1..columns)
                 this.addToSeats(new Seat(
-                        state: Seat.State.FREE,
+//                        state: Seat.State.FREE,
                         rowNum: r,
                         columnNum: c
                 ))
