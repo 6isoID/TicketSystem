@@ -6,4 +6,5 @@
 
 var theatreApp = angular.module('theatreApp', [
     'theatreControllers',
-    'theatreServices']);
+    'theatreServices',
+    'theatreFilters']);
