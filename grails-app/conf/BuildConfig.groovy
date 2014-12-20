@@ -5,6 +5,7 @@ grails.project.test.reports.dir = "target/test-reports"
 grails.project.work.dir = "target/work"
 grails.project.target.level = 1.7
 grails.project.source.level = 1.7
+grails.tomcat.nio = true
 //grails.project.war.file = "target/${appName}-${appVersion}.war"
 
 //TODO something a bit more destructive for debugging ?

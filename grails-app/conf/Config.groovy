@@ -95,6 +95,13 @@ environments {
     }
 }
 
+grails.converters.default.pretty.print = true
+//paranoia_mode = true
+grails.converters.json.pretty.print = true
+grails.converters.json.default.deep = true
+//grails.converters.json.date = "javascript"
+
+
 // log4j configuration
 log4j.main = {
     // Example of changing the log pattern for the default console appender:
