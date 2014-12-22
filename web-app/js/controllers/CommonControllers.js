@@ -13,25 +13,24 @@ theatreControllers.controller('SessionController', [
     '$scope',
     'Session',
     function ($scope, Session) {
-        $scope.sessions = Session.query();
-        //TODO remove
-        window.sessions = $scope.sessions;
+        var createRows = function (seatList) {
+            var rows = [];
+            var seat;
+            for (var i = 0; i < seatList.length; i++) {
+                seat = seatList[i];
+                if (!rows[seat.rowNum-1])rows[seat.rowNum-1] = [];
+                rows[seat.rowNum-1][seat.columnNum-1] = seat;
+            }
+            return rows;
+        }
 
-        //TODO interceptor http://stackoverflow.com/questions/21927819/angularjs-transform-response-in-resource-using-a-custom-service
-        //$scope.sessions.promise().then(function (resources) {
-        //    console.log("then: ");
-        //    console.log(resources)
-        //})
-        console.log($scope.sessions)
-        //for(var session in $scope.sessions) {
-        //    session.time = new Date(session.time.timeInMillis);
-        //}
-        //$scope.getRows = function(session) {
-        //    console.log(session.id);
-        //    var seats = session.hall.seats;
-        //
-        //    return [[1,2,3],[1,2,3]];
-        //}
+        Session.query().$promise.then(function (response) {
+            var session = null;
+            for (var i = 0; i < response.length; i++) {
+                response[i].rows = createRows(response[i].hall.seats);
+            }
+            $scope.sessions = response;
+        });
     }
 ])
 

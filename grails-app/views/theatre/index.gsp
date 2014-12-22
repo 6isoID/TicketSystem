@@ -18,14 +18,12 @@
             Cinema: {{session.cinema.name}} Duration: {{session.cinema.duration}} <br/>
 
             Session: {{session.time.time | date:'medium'}}<br/>
-            %{--TODO filter--}%
-            %{--getRows : {{getRows(session)}}--}%
 
-            %{--<div ng-repeat="seat in getRows(session)">--}%
-                %{--<span ng-repeat="col in seat">x</span><br/>--}%
-                %{--{{seat}}--}%
-                %{--{{seat.rowNum}} x {{seat.columnNum}}--}%
-            %{--</div>--}%
+            <div ng-repeat="seat in session.rows">
+                <span ng-repeat="col in seat | orderBy: col.columnNum">
+                    ({{col.rowNum}},{{col.columnNum}}) &nbsp;
+                </span><br/>
+            </div>
         </li>
 
     </ul>
