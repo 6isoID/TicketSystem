@@ -1,0 +1,12 @@
+
+li {
+    list-style: none;
+    padding: 15px;
+}
+
+.session-column {
+    background-color: rgba(86, 61, 124, .15);
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}

@@ -6,10 +6,10 @@
     <asset:javascript src="grails-angularjs.js"/>
     <asset:stylesheet src="grails-angularjs.css"/>
 
+
     <g:layoutHead/>
 </head>
 
-%{--<body>--}%
 <g:layoutBody/>
-%{--</body>--}%
+
 </html>

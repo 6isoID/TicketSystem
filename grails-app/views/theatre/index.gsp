@@ -2,32 +2,45 @@
 <html>
 <head>
     <title></title>
+    <!-- Angular app files
+    ===================================================-->
+    <asset:javascript src="services/CommonService.js"/>
+    <asset:javascript src="CommonControllers.js"/>
+    <asset:javascript src="filters/CommonFilters.js"/>
+    <asset:javascript src="app.js"/>
 
-    <g:javascript src="services/CommonServices.js"/>
-    <g:javascript src="controllers/CommonControllers.js"/>
-    <g:javascript src="filters/CommonFilters.js"/>
-
-    <g:javascript src="app.js"/>
-
+    <!-- style shit =)
+    ======================================-->
+    <asset:stylesheet src="bootstrap.css"/>
+    <asset:stylesheet src="common.css"/>
+    %{--<asset:stylesheet src="cover.css"/>--}%
 </head>
 
 <body>
-<div ng-controller="SessionController">
+
+
+<div ng-controller="SessionController" class="container">
+    <h1>Header</h1>
+    <p class="lead">Today in theatre</p>
     <ul>
-        <li ng-repeat="session in sessions">
-            Cinema: {{session.cinema.name}} Duration: {{session.cinema.duration}} <br/>
+        <div ng-repeat="session in sessions" class="session-column">
 
-            Session: {{session.time.time | date:'medium'}}<br/>
+            <li>
 
-            <div ng-repeat="seat in session.rows">
-                <span ng-repeat="col in seat | orderBy: col.columnNum">
-                    ({{col.rowNum}},{{col.columnNum}}) &nbsp;
-                </span><br/>
-            </div>
-        </li>
+                <h3>{{session.cinema.name}}</h3>
+                Duration: {{session.cinema.duration}} <br/>
+                Session: {{session.time.time | date:'medium'}}<br/>
 
+                <div ng-repeat="seat in session.rows">
+                    <span ng-repeat="col in seat | orderBy: col.columnNum">
+                        ({{col.rowNum}},{{col.columnNum}}) &nbsp;
+                    </span><br/>
+                </div>
+            </li>
+
+
+        </div>
     </ul>
-
 </div>
 
 </body>

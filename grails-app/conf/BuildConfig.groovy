@@ -22,7 +22,7 @@ grails.tomcat.nio = true
 //    // configure settings for the Console UI JVM
 //    console: [maxMemory: 768, minMemory: 64, debug: false, maxPerm: 256]
 //]
-
+grails.resources.debug=true
 grails.project.dependency.resolver = "maven" // or ivy
 grails.project.dependency.resolution = {
     // inherit Grails' default dependencies
@@ -62,7 +62,7 @@ grails.project.dependency.resolution = {
         // plugins for the compile step
         compile ":scaffolding:2.1.2"
         compile ':cache:1.1.8'
-        compile ":asset-pipeline:1.9.9"
+        compile ":asset-pipeline:2.0.19"
         compile ":angularjs:1.0.0"
         compile ":atmosphere-meteor:1.0.4"
 //        compile ":events-push:1.0.M7" // not available =(
@@ -73,7 +73,9 @@ grails.project.dependency.resolution = {
         runtime ":hibernate:3.6.10.18"
         runtime ":database-migration:1.4.0"
         runtime ":jquery:1.11.1"
-        runtime ":resources:1.2.13"
+        runtime ':twitter-bootstrap:3.3.1'
+//        runtime ":resources:1.2.13"
+
         // Uncomment these to enable additional asset-pipeline capabilities
         //compile ":sass-asset-pipeline:1.9.0"
         //compile ":less-asset-pipeline:1.10.0"

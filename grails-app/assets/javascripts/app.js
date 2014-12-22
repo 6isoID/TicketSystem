@@ -1,6 +1,7 @@
-/**
- * Created by Sergey_Fedorov on 19.Dec.2014.
- */
+//= require controllers/CommonControllers.js
+//= require services/CommonServices.js
+//= require filters/CommonFilters.js
+
 
     console.log("starting app");
 

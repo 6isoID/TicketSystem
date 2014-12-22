@@ -124,3 +124,4 @@ log4j.main = {
 }
 
 grails.sitemesh.default.layout = 'angularImport'
+//grails.resources.resourceLocatorEnabled = true

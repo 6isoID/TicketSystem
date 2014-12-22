@@ -1,6 +1,3 @@
-/**
- * Created by Sergey_Fedorov on 20.Dec.2014.
- */
 
 angular.module('theatreFilters',[]).filter('seatPlace', function() {
     //TODO long array of places with limiter for every n-th element

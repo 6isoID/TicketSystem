@@ -1,6 +1,3 @@
-/**
- * Created by Sergey_Fedorov on 18.Dec.2014.
- */
 
 var theatreServices = angular.module('theatreServices', ['ngResource']);
 

@@ -1,5 +1,3 @@
-'use strict';
-
 
 //TODO http://stackoverflow.com/a/20000089
 
