@@ -18,9 +18,9 @@
 
 <body>
 
-
 <div ng-controller="SessionController" class="container">
     <h1>Header</h1>
+
     <p class="lead">Today in theatre</p>
     <ul>
         <div ng-repeat="session in sessions" class="session-column">
@@ -38,8 +38,33 @@
                 </div>
             </li>
 
-
         </div>
+
+    </ul>
+</div>
+
+<h1>Possible UI</h1>
+
+<div>
+    <ul class="cinema-list">
+        <li class="cinema-container">
+            <h3 class="cinema-header">Cinema name</h3>
+            <span>Duration: XX min</span>
+
+            <div class="description-container">
+                <span>Description:</span>
+
+                <p>
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat
+                </p>
+            </div>
+            Coming sessions:
+            <ul class="session-list">
+                <li class="session"><a href="#">Session time</a></li>
+                <li class="session"><a href="#">Session time</a></li>
+                <li class="session"><a href="#">Session time</a></li>
+            </ul>
+        </li>
     </ul>
 </div>
 

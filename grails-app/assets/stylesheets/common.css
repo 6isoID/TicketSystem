@@ -10,3 +10,23 @@ li {
     margin-bottom: 10px;
 
 }
+
+.cinema-list {
+    padding: 10px;
+}
+
+.cinema-container {
+    padding: 10px;
+}
+
+.cinema-header {
+    padding: 10px;
+}
+
+.session-list {
+    padding: 10px;
+}
+
+.session {
+    padding: 10px;
+}
