@@ -1,8 +1,5 @@
 
-li {
-    list-style: none;
-    padding: 15px;
-}
+
 
 .session-column {
     background-color: rgba(86, 61, 124, .15);
@@ -11,55 +8,54 @@ li {
 
 }
 
-.cinema-list {
-     padding: 10px;
-
+.cinema-list li:first-child {
+    margin-top: 20px;
+    /*padding: 10px;*/
 
 }
 
-
 .cinema-container {
-    -webkit-box-shadow: 0px 0px 30px 1px rgba(255,255,255,0.62);
-    -moz-box-shadow: 0px 0px 30px 1px rgba(255,255,255,0.62);
-    box-shadow: 0px 0px 30px 1px rgba(255,255,255,0.62);
+    -webkit-box-shadow: 0px 0px 30px 1px rgba(255, 255, 255, 0.62);
+    -moz-box-shadow: 0px 0px 30px 1px rgba(255, 255, 255, 0.62);
+    box-shadow: 0px 0px 30px 1px rgba(255, 255, 255, 0.62);
 
-    /*border-radius: 20px 20px 20px 20px;*/
-    /*-moz-border-radius: 20px 20px 20px 20px;*/
-    /*-webkit-border-radius: 20px 20px 20px 20px;*/
-    /*border: 0px none #000000;*/
-
+    /*display: inline-block;*/
+    margin-bottom: 30px;
     padding: 42px;
-    background-color: rgba(255, 252, 240, 0.9);
+    background-color: rgba(255, 252, 240, 0.95);
+    height: 520px;
 }
 
 .cinema-header {
-    padding: 10px;
+    /*padding: 10px;*/
 }
 
 .session-list {
-    padding: 10px;
+    /*padding: 10px;*/
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
 }
 
 .session {
     padding: 10px;
 }
 
-
 .cinema-thumbnail {
-    width: 300px;
+    height: 436px;
 }
 
 .background {
     background: url("../assets/background-trash.jpg") fixed 100%;
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     z-index: -2;
 }
 
 .layer {
     background-color: rgba(248, 247, 216, 0.6);
-    position: absolute;
+    position: fixed;
     z-index: -1;
     top: 0;
     left: 0;
@@ -70,10 +66,25 @@ li {
 .list-header, .list-footer {
     width: 100px;
     height: 20px;
-    background-color: rgba(100,100,100,0.5);
+    background-color: rgba(100, 100, 100, 0.5);
 }
 
 .container-fluid {
     background-color: rgba(255, 252, 240, 0.9);
 }
 
+.seatplace {
+    width: 20px;
+    height: 20px;
+    background-color: #006dba;
+    display: inline-block;
+    margin: 5px;
+}
+
+.seatplace:hover{
+    background-color: #008dda;
+}
+
+.poster-holder {
+    width: 360px;
+}

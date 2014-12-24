@@ -9,6 +9,7 @@ class Cinema {
 
     String name
     int duration //in minutes
+    String description
 
     static constraints = {
     }

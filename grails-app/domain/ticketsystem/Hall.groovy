@@ -5,7 +5,7 @@ import groovy.transform.ToString
 
 @ToString
 class Hall {
-
+    String name
 
     static hasMany = [seats: Seat]
     static constraints = {

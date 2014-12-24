@@ -10,10 +10,12 @@ class BootStrap {
 
     def init = { servletContext ->
         Hall smallHall = new Hall(3, 8)
+        smallHall.name = 'Small hall'
         Hall bigHall = new Hall(10, 15)
+        bigHall.name = 'Big hall'
 
-        Cinema trashCinema = [name: "Зеленый слоник", duration: 86]
-        Cinema aestheticCinema = [name: "Inception", duration: 130]
+        Cinema trashCinema = [name: 'Зеленый слоник', duration: 86, description:'Фильм о свободе человека, о её краеугольном значении и бесценности для личности. Кино о возможных метаморфозах человеческой сущности в условиях замкнутого пространства, тотального унижения и безысходности. Фильм — о подвиге русского офицера.']
+        Cinema aestheticCinema = [name: 'Inception', duration: 130, description: '«It’s really, at its core, a big action heist movie» ']
 
         trashCinema.save()
         aestheticCinema.save()
@@ -43,14 +45,14 @@ class BootStrap {
         Session aestheticSession1 = [
                 time: nearFuture,
                 cost: BigDecimal.ONE,
-                hall: bigHall,
+                hall: smallHall,
                 cinema: aestheticCinema
         ]
         nearFuture.add(Calendar.DAY_OF_WEEK,1)
         Session aestheticSession2 = [
                 time: nearFuture,
                 cost: BigDecimal.ONE,
-                hall: bigHall,
+                hall: smallHall,
                 cinema: aestheticCinema
         ]
 

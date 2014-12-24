@@ -4,12 +4,12 @@
     <title></title>
     <!-- Angular app files
     ===================================================-->
-    <asset:javascript src="app.js" />
+    <asset:javascript src="app.js"/>
 
     <!-- style shit =)
     ======================================-->
-    <asset:stylesheet src="bootstrap.css" />
-    <asset:stylesheet src="common.css" />
+    <asset:stylesheet src="bootstrap.css"/>
+    <asset:stylesheet src="common.css"/>
 </head>
 
 <body>
@@ -21,74 +21,85 @@
 
 
     <!-- Navigation bar
-    TODO: separate template for cinema and sessions
-    ========================================-->
-    <nav class="navbar navbar-default">
+    =================================================-->
+    <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="#">How do we see the DDD</a>
             </div>
+            %{--<h2 class="text-center">Today in theatre</h2>--}%
         </div>
     </nav>
 
-
-
-    <div class="container">
-
-        %{--<div ng-controller="SessionController" class="container">--}%
-        %{--<h1>Header</h1>--}%
-
-        %{--<p class="lead">Today in theatre</p>--}%
-
-        %{--<ul>--}%
-        %{--<div ng-repeat="session in sessions" class="session-column">--}%
-
-        %{--<li>--}%
-        %{--<img ng-src="{{'../assets/posters/' + session.cinema.name + '.jpg'}}" class="cinema-thumbnail">--}%
-        %{--<h3>{{session.cinema.name}}</h3>--}%
-        %{--Duration: {{session.cinema.duration}} <br/>--}%
-        %{--Session: {{session.time.time | date:'medium'}}<br/>--}%
-
-        %{--<div ng-repeat="seat in session.rows">--}%
-        %{--<span ng-repeat="col in seat | orderBy: col.columnNum">--}%
-        %{--({{col.rowNum}},{{col.columnNum}}) &nbsp;--}%
-        %{--</span><br/>--}%
-        %{--</div>--}%
-        %{--</li>--}%
-
-        %{--</div>--}%
-
-        %{--</ul>--}%
-
-        %{--</div>--}%
+    <!-- Content
+    ======================================================-->
+    <div ng-controller="SessionController" class="container">
+        <br/>
+        <br/>
+        <br/>
+        <!--TODO alignment-->
 
 
 
 
-        <h1>Possible UI</h1>
-        <ul class="cinema-list">
-            <li class="cinema-container">
-                <img ng-src="{{'../assets/posters/Inception.jpg'}}" class="cinema-thumbnail">
-<div class="content">
-                <h3 class="cinema-header">Cinema name</h3>
-                <span>Duration: XX min</span>
+        <!-- Cinema list
+        ==========================================================================================================-->
+        <ul class="cinema-list list-unstyled">
 
-                <div class="description-container">
-                    <span>Description:</span>
+            <!-- Cinema
+            ========================================================-->
+            <li class="cinema-container row" ng-repeat="cinema in cinemas">
 
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat
-                    </p>
+                <!-- Poster
+                ========================-->
+                <img ng-src="{{'../assets/posters/' + cinema.name + '.jpg'}}" class="cinema-thumbnail col-lg-4">
+
+                <!-- Right side
+                ================-->
+                <div class="col-lg-8">
+                    <!-- Name
+                    ===========================================-->
+                    <h3 class="cinema-header">{{cinema.name}}</h3>
+
+                    <!-- Duration
+                    ===========================================-->
+                    <b>Duration:</b> {{cinema.duration}}
+
+                <!-- Description
+                    ===========================================-->
+                    <div class="description-container">
+                        <b>Description:</b>
+                        <span>{{cinema.description}}</span>
+                        <br/>
+                        <br/>
+
+                    </div>
+
+                    <!-- Sessions
+                    ===========================================-->
+                    <h4>Coming sessions:</h4>
+                    %{--TODO sessions as buttons--}%
+                    <ul class="session-list list-unstyled">
+                        <li ng-repeat="session in cinema.sessions" class="session">
+                            <a href="#">{{session.hall.name}}: {{session.time.time | date:'HH:mm'}}</a>
+
+                            <!-- Temporary hall view
+                            ===================================-->
+                            <div ng-repeat="seat in session.rows">
+                                <span ng-repeat="col in seat | orderBy: col.columnNum">
+                                    <div id="{{session.id}}:{{col.rowNum}},{{col.columnNum}}" class="seatplace"/>
+                                </span><br/>
+                            </div>
+
+                        </li>
+                    </ul>
                 </div>
-                Coming sessions:
-                <ul class="session-list">
-                    <li class="session"><a href="#">Session time</a></li>
-                    <li class="session"><a href="#">Session time</a></li>
-                    <li class="session"><a href="#">Session time</a></li>
-                </ul>
-</div>
             </li>
+
         </ul>
+
+
+        <!-- TODO: http://getbootstrap.com/css/ -->
 
     </div>
 

@@ -22,11 +22,29 @@ theatreControllers.controller('SessionController', [
             return rows;
         }
 
+        
+        //client has another BC - translating session list into cinema list
         Session.query().$promise.then(function (response) {
+            $scope.cinemas = {};
+            var cinemas = $scope.cinemas;
+            var cinema = null;
             var session = null;
+            var id = null;
             for (var i = 0; i < response.length; i++) {
-                response[i].rows = createRows(response[i].hall.seats);
+                session = response[i];
+                id = session.cinema.id;
+
+                if(!cinemas[id]){
+                    cinemas[id] = session.cinema;
+                    cinemas[id].sessions = [];
+                }
+                cinema = cinemas[id];
+                session.rows = createRows(session.hall.seats);
+                delete session.cinema;
+                cinema.sessions.push(session);
+
             }
+            console.log(cinemas);
             $scope.sessions = response;
         });
     }
