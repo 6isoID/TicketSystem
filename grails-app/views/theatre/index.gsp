@@ -79,12 +79,15 @@
                     ===========================================-->
                     <h4>Coming sessions:</h4>
                     %{--TODO sessions as buttons--}%
-                    <ul class="session-list list-unstyled">
+                    <ul class="session-list list-unstyled list-inline">
                         <li ng-repeat="session in cinema.sessions" class="session">
-                            <a href="#">{{session.hall.name}}: {{session.time.time | date:'HH:mm'}}</a>
+                            %{--<button><a href="#" class="">--}%
+                                <h5>{{session.hall.name}}: {{session.time.time | date:'HH:mm'}}</h5>
+                            %{--</a></button>--}%
 
                             <!-- Temporary hall view
                             ===================================-->
+                            <div class="screen"></div>
                             <div ng-repeat="seat in session.rows">
                                 <span ng-repeat="col in seat | orderBy: col.columnNum">
                                     <div id="{{session.id}}:{{col.rowNum}},{{col.columnNum}}" class="seatplace"/>
