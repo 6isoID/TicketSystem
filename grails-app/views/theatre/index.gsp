@@ -4,12 +4,12 @@
     <title></title>
     <!-- Angular app files
     ===================================================-->
-    <asset:javascript src="app.js"/>
+    <asset:javascript src="app.js" />
 
     <!-- style shit =)
     ======================================-->
-    <asset:stylesheet src="bootstrap.css"/>
-    <asset:stylesheet src="common.css"/>
+    <asset:stylesheet src="bootstrap.css" />
+    <asset:stylesheet src="common.css" />
 </head>
 
 <body>
@@ -34,9 +34,9 @@
     <!-- Content
     ======================================================-->
     <div ng-controller="SessionController" class="container">
-        <br/>
-        <br/>
-        <br/>
+        <br />
+        <br />
+        <br />
         <!--TODO alignment-->
 
 
@@ -70,8 +70,8 @@
                     <div class="description-container">
                         <b>Description:</b>
                         <span>{{cinema.description}}</span>
-                        <br/>
-                        <br/>
+                        <br />
+                        <br />
 
                     </div>
 
@@ -82,7 +82,7 @@
                     <ul class="session-list list-unstyled list-inline">
                         <li ng-repeat="session in cinema.sessions" class="session">
                             %{--<button><a href="#" class="">--}%
-                                <h5>{{session.hall.name}}: {{session.time.time | date:'HH:mm'}}</h5>
+                            <h5>{{session.hall.name}}: {{session.time.time | date:'HH:mm'}}</h5>
                             %{--</a></button>--}%
 
                             <!-- Temporary hall view
@@ -90,12 +90,17 @@
                             <div class="screen"></div>
                             <div ng-repeat="seat in session.rows">
                                 <span ng-repeat="col in seat | orderBy: col.columnNum">
-                                    <div id="{{session.id}}:{{col.rowNum}},{{col.columnNum}}" class="seatplace"/>
-                                </span><br/>
+                                    <div id='{
+                                    "session": {{session.id}},
+                                    "rowNum": {{col.rowNum}},
+                                    "columnNum": {{col.columnNum}}
+                                    }' class="seatplace" ng-click="addToCart()" />
+                                </span><br />
                             </div>
-
                         </li>
+
                     </ul>
+                    <button ng-click="submitCart()" >Submit cart</button>
                 </div>
             </li>
 

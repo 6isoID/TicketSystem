@@ -1,8 +1,10 @@
 package ticketsystem
 
-import grails.rest.RestfulController
+import org.atmosphere.config.service.ManagedService
 
-class CartController extends RestfulController{
+
+@ManagedService(path="/cart")
+class CartController {
     static responseFormats = ['json']
 
 
