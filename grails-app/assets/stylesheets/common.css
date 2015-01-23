@@ -75,9 +75,24 @@
 .seatplace {
     width: 20px;
     height: 20px;
-    background-color: #A7A492;
     display: inline-block;
     margin: 5px;
+}
+
+.FREE {
+    background-color: #A7A492;
+}
+
+.BLOCKED {
+    background-color: #ff9500;
+}
+
+.RESERVED {
+    background-color: #00e3ff;
+}
+
+.SOLD {
+    background-color: #ff0600;
 }
 
 .seatplace:hover {

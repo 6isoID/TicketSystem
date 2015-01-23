@@ -94,7 +94,7 @@
                                     "session": {{session.id}},
                                     "rowNum": {{col.rowNum}},
                                     "columnNum": {{col.columnNum}}
-                                    }' class="seatplace" ng-click="addToCart()" />
+                                    }' class="seatplace {{col.state}}" ng-click="addToCart()" />
                                 </span><br />
                             </div>
                         </li>

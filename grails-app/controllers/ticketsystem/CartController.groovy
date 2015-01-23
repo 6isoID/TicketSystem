@@ -1,5 +1,6 @@
 package ticketsystem
 
+import grails.converters.JSON
 import org.atmosphere.config.service.ManagedService
 
 
@@ -18,8 +19,9 @@ class CartController {
             throw new RuntimeException("atmosphereMeteor.framework is null")
         }
         println "hehehe"
-//		render(view: "index")
-        return Ticket.list()
+        JSON.use("narrow"){
+            render Ticket.list() as JSON
+        }
     }
 
     def triggerPublic() {

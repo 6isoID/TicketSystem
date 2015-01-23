@@ -1,4 +1,5 @@
 //= require atmosphere.js
+
 var theatreServices = angular.module('theatreServices', ['ngResource']);
 
 theatreServices.factory('Session', [
@@ -13,8 +14,9 @@ theatreServices.factory('Session', [
 
 
 //got from http://spyboost.github.io/angular-atmosphere/service/angular-atmosphere-service.js
-angular.module('angular.atmosphere', [])
-    .service('atmosphereService', function($rootScope){
+//var angularService = angular.module('angular.atmosphere', [])
+
+theatreServices.service('atmosphereService', ['$rootScope', function($rootScope){
         var responseParameterDelegateFunctions = ['onOpen', 'onClientTimeout', 'onReopen', 'onMessage', 'onClose', 'onError'];
         var delegateFunctions = responseParameterDelegateFunctions;
         delegateFunctions.push('onTransportFailure');
@@ -50,6 +52,6 @@ angular.module('angular.atmosphere', [])
                 return atmosphere.subscribe(result);
             }
         };
-    });
+    }]);
 
 console.log("services have been initiated")

@@ -38,8 +38,3 @@ servlets = [
 //				initParams: defaultInitParams
 //		],
 ]
-
-
-servlets = [
-
-]
